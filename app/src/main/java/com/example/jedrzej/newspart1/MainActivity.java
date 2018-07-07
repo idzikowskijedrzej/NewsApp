@@ -29,7 +29,11 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         noConnectionTextView = findViewById(R.id.noConnection_TextView);
+        noConnectionTextView.setText(R.string.noNews);
+
         listView = findViewById(R.id.list_news);
+        listView.setEmptyView(noConnectionTextView);
+
         newsAdapter = new NewsAdapter(this);
         listView.setAdapter(newsAdapter);
 
