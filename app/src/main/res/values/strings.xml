@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewsPart1</string>
+    <string name="noConnection">No connection. \n Check your internet connection and restart the application.</string>
+</resources>
