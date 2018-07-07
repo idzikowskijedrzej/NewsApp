@@ -23,7 +23,7 @@ public class MainActivity
     private NewsAdapter newsAdapter;
     TextView noConnectionTextView;
     ListView listView;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +54,6 @@ public class MainActivity
                 startActivity(goWebsite);
             }
         });
-
     }
 
     @Override
@@ -64,16 +63,20 @@ public class MainActivity
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> data) {
-        noConnectionTextView.setVisibility(View.VISIBLE);
-        noConnectionTextView.setText(R.string.noConnection);
-        newsAdapter.clear();
-
         if (data != null) {
             noConnectionTextView.setVisibility(View.GONE);
             newsAdapter.setNotifyOnChange(false);
             newsAdapter.clear();
             newsAdapter.setNotifyOnChange(true);
             newsAdapter.addAll(data);
+        }
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        if (!isConnected) {
+            noConnectionTextView.setVisibility(View.VISIBLE);
+            noConnectionTextView.setText(R.string.noConnection);
         }
     }
 
