@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">NewsPart1</string>
+    <string name="app_name">NewsPart2</string>
     <string name="noConnection">No connection. \n Check your internet connection and restart the application.</string>
     <string name="noNews">There are no news to be displayed.</string>
+
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">News Settings</string>
+
+    <string name="settings_number_of_news">Number of news</string>
+    <string name="settings_min_news_value">10</string>
+    <string name="settings_number_of_news_key" translatable="false">num_of_news</string>
+
+    <string name="settings_order_by">Order by</string>
 </resources>
