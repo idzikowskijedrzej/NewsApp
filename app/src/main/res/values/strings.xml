@@ -7,7 +7,7 @@
     <string name="settings_title">News Settings</string>
 
     <string name="settings_number_of_news">Number of news</string>
-    <string name="settings_min_news_value">10</string>
+    <string name="settings_default_news_number">10</string>
     <string name="settings_number_of_news_key" translatable="false">num_of_news</string>
 
     <string name="settings_order_by">Order by</string>

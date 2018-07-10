@@ -31,6 +31,7 @@ public class Query {
                 .encodedAuthority("content.guardianapis.com")
                 .appendPath("search")
                 .appendQueryParameter("order-by", "newest")
+                .appendQueryParameter("page-size" , "10" )
                 .appendQueryParameter("show-references", "author")
                 .appendQueryParameter("show-tags", "contributor")
                 .appendQueryParameter("q", "Android")

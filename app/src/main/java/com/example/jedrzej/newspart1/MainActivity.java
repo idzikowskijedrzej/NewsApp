@@ -2,10 +2,12 @@ package com.example.jedrzej.newspart1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +66,14 @@ public class MainActivity
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // getString retrieves a String value from the preferences.
+        String newsNumber = sharedPrefs.getString(
+                getString(R.string.settings_default_news_number),
+                getString(R.string.settings_number_of_news_key));
+
         return new NewsLoader(this);
     }
 
@@ -99,6 +109,7 @@ public class MainActivity
     }
 
     @Override
+    // This method is called when an item in the options menu is selected
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
