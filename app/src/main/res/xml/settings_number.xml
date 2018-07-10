@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+android:title="@string/settings_title">
+
+    <EditTextPreference
+    android:defaultValue="@string/settings_default_news_number"
+    android:inputType="numberDecimal"
+    android:key="@string/settings_number_of_news_key"
+    android:selectAllOnFocus="true"
+    android:title="@string/settings_number_of_news"
+    android:textColor="@color/colorPrimary"/>
+
+    <PreferenceCategory
+        android:title="@string/settings_categories"/>
+
+    <CheckBoxPreference
+        android:title="@string/settings_business"
+        android:key="business"/>
+    <CheckBoxPreference
+        android:title="@string/settings_lifestyle"
+        android:key="lifestyle"/>
+    <CheckBoxPreference
+        android:title="@string/settings_science"
+        android:key="science"/>
+    <CheckBoxPreference
+        android:title="@string/settings_sport"
+        android:key="sport"/>
+    <CheckBoxPreference
+        android:title="@string/settings_money"
+        android:key="money"/>
+
+</PreferenceScreen>
