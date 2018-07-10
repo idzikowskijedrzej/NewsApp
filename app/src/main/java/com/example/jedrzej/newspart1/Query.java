@@ -36,8 +36,7 @@ public class Query {
                 .appendQueryParameter("show-tags", "contributor")
                 .appendQueryParameter("q", "Android")
                 .appendQueryParameter("api-key", "11d32a74-a8f3-4ccb-85c8-91768d08a3eb");
-        String url = builder.build().toString();
-        return url;
+        return builder.build().toString();
     }
 
     static URL createUrl() {
