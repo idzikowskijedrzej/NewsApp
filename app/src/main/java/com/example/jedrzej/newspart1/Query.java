@@ -25,12 +25,13 @@ import java.util.Locale;
 public class Query {
 
     // build String query
-    static String createStringUrl(String newsNumber) {
+    static String createStringUrl(String newsNumber, String newsCategories) {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("http")
                 .encodedAuthority("content.guardianapis.com")
                 .appendPath("search")
                 .appendQueryParameter("order-by", "newest")
+                .appendQueryParameter("section", newsCategories)
                 .appendQueryParameter("page-size" , newsNumber )
                 .appendQueryParameter("show-references", "author")
                 .appendQueryParameter("show-tags", "contributor")
@@ -39,8 +40,8 @@ public class Query {
         return builder.build().toString();
     }
 
-    static URL createUrl(String newsNumber) {
-        String stringUrl = createStringUrl(newsNumber);
+    static URL createUrl(String newsNumber, String newsCategories) {
+        String stringUrl = createStringUrl(newsNumber, newsCategories);
         try {
             return new URL(stringUrl);
         } catch (MalformedURLException e) {

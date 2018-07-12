@@ -22,16 +22,18 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
         forceLoad();
     }
 
-    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
     // getString retrieves a String value from the preferences.
-    String newsNumber = sharedPrefs.getString("num_of_news","10");
+    private String newsNumber = sharedPreferences.getString("num_of_news","10");
+
+    private String newsCategory = sharedPreferences.getString("category_of_news","business");
 
 
     @Override
     public List<News> loadInBackground() {
         List<News> newsList = null;
         try {
-            URL url = Query.createUrl(newsNumber);
+            URL url = Query.createUrl(newsNumber, newsCategory);
             String jsonResponse = Query.makeHttpRequest(url);
             newsList = Query.parseJson(jsonResponse);
         } catch (IOException e) {

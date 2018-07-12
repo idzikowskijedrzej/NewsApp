@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-android:title="@string/settings_title">
+    android:title="@string/settings_title">
 
     <EditTextPreference
-    android:defaultValue="@string/settings_default_news_number"
-    android:inputType="numberDecimal"
-    android:key="@string/settings_number_of_news_key"
-    android:selectAllOnFocus="true"
-    android:title="@string/settings_number_of_news"
-    android:textColor="@color/colorPrimary"/>
+        android:defaultValue="@string/settings_default_news_number"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_number_of_news_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_number_of_news" />
 
     <ListPreference
-        android:title="@string/settings_category"
+        android:defaultValue="@string/settings_business"
         android:entries="@array/categories_labels"
         android:entryValues="@array/categories_values"
-        android:key="@string/settings_category_key"/>
+        android:key="@string/settings_category_key"
+        android:title="@string/settings_category_title" />
 
 </PreferenceScreen>
