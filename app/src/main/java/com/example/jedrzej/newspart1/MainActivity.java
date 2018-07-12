@@ -66,14 +66,6 @@ public class MainActivity
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-        // getString retrieves a String value from the preferences.
-        String newsNumber = sharedPrefs.getString(
-                getString(R.string.settings_default_news_number),
-                getString(R.string.settings_number_of_news_key));
-
         return new NewsLoader(this);
     }
 
