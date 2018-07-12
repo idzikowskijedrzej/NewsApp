@@ -11,23 +11,10 @@ android:title="@string/settings_title">
     android:title="@string/settings_number_of_news"
     android:textColor="@color/colorPrimary"/>
 
-    <PreferenceCategory
-        android:title="@string/settings_categories"/>
-
-    <CheckBoxPreference
-        android:title="@string/settings_business"
-        android:key="business"/>
-    <CheckBoxPreference
-        android:title="@string/settings_lifestyle"
-        android:key="lifestyle"/>
-    <CheckBoxPreference
-        android:title="@string/settings_science"
-        android:key="science"/>
-    <CheckBoxPreference
-        android:title="@string/settings_sport"
-        android:key="sport"/>
-    <CheckBoxPreference
-        android:title="@string/settings_money"
-        android:key="money"/>
+    <ListPreference
+        android:title="@string/settings_category"
+        android:entries="@array/categories_labels"
+        android:entryValues="@array/categories_values"
+        android:key="@string/settings_category_key"/>
 
 </PreferenceScreen>

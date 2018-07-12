@@ -10,7 +10,9 @@
     <string name="settings_default_news_number">10</string>
     <string name="settings_number_of_news_key" translatable="false">num_of_news</string>
 
-    <string name="settings_categories">Choose categories</string>
+    <string name="settings_category">Choose category</string>
+
+    <string name="settings_category_key">category_of_news</string>
     <string name="settings_sport">Sport</string>
     <string name="settings_science">Science</string>
     <string name="settings_money">Money</string>
